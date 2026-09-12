@@ -287,9 +287,6 @@ VirusTotal_API_Key=your_virustotal_api_key
 ABUSEIPDB_API_KEY=your_abuseipdb_api_key
 GEMINI_API_KEY=your_gemini_api_key
 ```
-
-**Do not commit your `.env` file or API keys to GitHub.**
-
 ---
 
 ## Installation
@@ -341,7 +338,7 @@ Create the `.env` file and add the required API keys.
 Start the FastAPI backend from the project directory:
 
 ```bash
-uvicorn app.main:app --reload
+fastapi dev app/main.py
 ```
 
 The FastAPI server will run on:
