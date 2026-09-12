@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #0a0a0f;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px; 
+    backdrop-filter: blur(10px);
+}
+
+.dashboard {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #999;
+    font-size: 14px;
+}
+
+.scan-card {
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.section-title p {
+    color: #999;
+    font-size: 14px;
+}
+
+.scan-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.scan-controls input {
+    flex: 1;
+}
+
+.scan-controls select,
+.scan-controls input,
+.scan-controls button {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1)
+}
+
+.scan-controls button {
+    cursor: pointer;
+}
+
+.results-grid {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.result-card {
+    padding: 20px;
+    flex: 1;
+}
+
+.intelligence-card,
+.ai-card {
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#pdfButton {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+}
+
+.intel-section{
+    padding: 15px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.intel-section h3{
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.intel-section p{
+    color: light gray;
+    line-height: 1.6; 
+    white-space: pre-line;
+}
+
+.ai-analysis{
+    white-space: pre-line;
+    line-height: 1.7;
+    color: light gray;
+}
+
+#loadingOverlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(5px); 
+    z-index: 1000;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#loadingOverlay p{
+    margin-top: 15px;
+    color: rgb(204, 204, 204);
+}
+
+.loader{
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

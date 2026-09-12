@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Threat Intelligence Dashboard </title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div id="loadingOverlay">
+        <div class="loader"></div>
+        <p> Scanning Target..........</p>
+    </div>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <main class="dashboard">
+
+        <!-- Header -->
+         <header class="header">
+            <div>
+                <h1> Threat Intelligence </h1>
+                <p> Analyze Domain and IP addresses for potential threats.</p>
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                System Online
+            </div>
+
+         </header>
+
+        <!-- Scan Section -->
+        <section class="glass-card scan-card"> 
+
+            <div class="section-title">
+                <h2> Threat Scanner </h2>
+                <p> Enter a Domain or IP address to begin analysis. </p>
+            </div>
+
+            <div class="scan-controls">
+
+                <select id="targettype">
+                    <option value="domain"> Domain </option>
+                    <option value="ip"> IP Address </option>
+                </select>
+
+            
+
+            <input type="text" id="target" placeholder="Enter domain or IP address">
+
+            <button id="scanButton"> Scan Target </button>
+
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="results-grid"> 
+
+            <div class="glass-card result-card">
+                <span class="card-label"> Risk Score:  </span>
+                <strong id="riskScore">----</strong>
+            </div>
+
+            <div class="glass-card result-card">
+                <span class="card-label"> Risk Level:  </span>
+                <strong id="riskLevel">-----</strong>
+            </div>
+
+            <div class="glass-card result-card">
+                <span class="card-label"> Target Status </span>
+                <strong id="targetStatus"> Waiting </strong>
+            </div>
+            
+        </section>
+
+        <!-- Threat Intelligence -->
+         <section class="glass-card intelligence-card">
+
+            <div class="section-title">
+                <h2> Threat Intelligence </h2>
+                <p> Results collected from security intelligence sources. </p>
+            </div>
+
+            <div id="intelligenceResults" class="intelligence-results">
+                <p class="placeholder">
+                    Run a scan to view threat intelligence.
+                </p>
+            </div>
+         </section>
+        
+
+        <!-- AI Analysis -->
+         <section class="glass-card ai-card">
+
+            <div class="section-title">
+                <h2> AI Threat Analysis </h2>
+                <p> Automated interpretation of the collected intelligence </p>
+            </div>
+
+            <div id="aiAnalysis" class="ai-analysis">
+                <p class="placeholder">
+                    AI analysis will appear here after scanning.
+                </p>
+            </div>
+         </section>
+        
+        <!-- Footer -->
+        <footer>
+            <span> Threat Intelligence Dashboard V1 </span>
+
+            <button id="pdfButton">
+                Generate PDF Report
+            </button>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
