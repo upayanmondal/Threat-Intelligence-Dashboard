@@ -1,4 +1,4 @@
-**Threat Intelligence Dashboard**
+#**Threat Intelligence Dashboard**
 A Python-based threat intelligence dashboard that analyzes domains and IP addresses using multiple security intelligence sources and presents the results through a web interface.
 The project combines cybersecurity APIs, automated risk scoring, AI-assisted analysis, database storage, and PDF report generation into a single dashboard.
 
