@@ -79,7 +79,7 @@ Threat Intelligence Dashboard/
 │   ├── styles.css
 │   └── script.js
 │
-├── .env
+├── .env.example
 │
 └── threat_intelligence.db
 ```
@@ -294,7 +294,7 @@ GEMINI_API_KEY=your_gemini_api_key
 Clone the repository:
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/upayanmondal/Threat-Intelligence-Dashboard
 ```
 
 Move into the project directory:
