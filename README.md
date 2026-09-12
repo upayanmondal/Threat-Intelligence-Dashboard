@@ -1,45 +1,46 @@
 **Threat Intelligence Dashboard**
 A Python-based threat intelligence dashboard that analyzes domains and IP addresses using multiple security intelligence sources and presents the results through a web interface.
 The project combines cybersecurity APIs, automated risk scoring, AI-assisted analysis, database storage, and PDF report generation into a single dashboard.
-________________________________________
+
 **Features**
-•	Analyze Domain Names and IP Addresses
-•	VirusTotal threat intelligence
-•	AbuseIPDB analysis for IP addresses
-•	DNS resolution
-•	WHOIS information
-•	SSL/TLS certificate information
-•	Automated Risk Score and Risk Level
-•	Gemini-powered AI threat analysis
-•	SQLite database for storing scan results
-•	PDF report generation
-•	Input validation for domains and IP addresses
-•	Handling of unresolved/invalid targets
-•	Loading indicator during scans
-•	Web-based dashboard interface
-________________________________________
+• Analyze Domain Names and IP Addresses
+• VirusTotal threat intelligence
+• AbuseIPDB analysis for IP addresses
+• DNS resolution
+• WHOIS information
+• SSL/TLS certificate information
+• Automated Risk Score and Risk Level
+• Gemini-powered AI threat analysis
+• SQLite database for storing scan results
+• PDF report generation
+• Input validation for domains and IP addresses
+• Handling of unresolved/invalid targets
+• Loading indicator during scans
+• Web-based dashboard interface
+
 **Tech Stack**
 **Backend**
-•	Python
-•	FastAPI
-•	SQLAlchemy
-•	SQLite
-•	ReportLab
+• Python
+• FastAPI
+• SQLAlchemy
+• SQLite
+• ReportLab
 
 **Security Intelligence**
-•	VirusTotal API
-•	AbuseIPDB API
-•	WHOIS
-•	DNS
-•	SSL/TLS
+• VirusTotal API
+• AbuseIPDB API
+• WHOIS
+• DNS
+• SSL/TLS
 
 **AI**
-•	Google Gemini API
+• Google Gemini API
+
 **Frontend**
-•	HTML
-•	CSS
-•	JavaScript
-________________________________________
+• HTML
+• CSS
+• JavaScript
+
 **Project Structure**
 Threat Intelligence Dashboard/
 │
@@ -65,7 +66,7 @@ Threat Intelligence Dashboard/
 ├── .env
 │
 └── threat_intelligence.db
-________________________________________
+
 
 **How It Works**
 The dashboard follows this general workflow:
@@ -100,49 +101,49 @@ Display Results
         │
         ▼
 Generate PDF Report
-________________________________________
 
 **Domain Analysis**
 For domain targets, the dashboard collects information from:
 DNS
 Retrieves the IP address associated with the domain.
 
-VirusTotal
+**VirusTotal**
 Retrieves information such as:
-•	Reputation
-•	Malicious detections
-•	Suspicious detections
-•	Harmless detections
-•	Undetected results
-•	Timeout results
-WHOIS
+• Reputation
+• Malicious detections
+• Suspicious detections
+• Harmless detections
+• Undetected results
+• Timeout results
+
+**WHOIS**
 Retrieves information such as:
-•	Registrar
-•	Creation date
-•	Expiration date
-•	Name servers
-SSL/TLS
+• Registrar
+• Creation date
+• Expiration date
+• Name servers
+
+**SSL/TLS**
 Retrieves certificate information such as:
-•	Issuer
-•	Subject
-•	Valid-from date
-•	Valid-until date
-________________________________________
+• Issuer
+• Subject
+• Valid-from date
+• Valid-until date
 
 **IP Analysis**
 For IP addresses, the dashboard uses:
-VirusTotal
+**VirusTotal**
 Provides reputation and security analysis information.
-AbuseIPDB
+
+**AbuseIPDB**
 Provides information such as:
-•	Abuse confidence score
-•	Total reports
-•	Country
-•	ISP
-•	Domain
-•	Usage type
-•	Last reported date
-________________________________________
+• Abuse confidence score
+• Total reports
+• Country
+• ISP
+• Domain
+• Usage type
+• Last reported date
 
 **Risk Engine**
 The project calculates an automated risk score based on the collected threat intelligence.
@@ -155,36 +156,35 @@ Abuse Confidence Score ÷ 10
 The resulting score is capped at 100.
 The dashboard then assigns a corresponding risk level based on the score.
 This provides a simple numerical representation of the collected threat intelligence before the results are passed to the AI analysis stage.
-________________________________________
 
 **AI Threat Analysis**
 After the intelligence is collected, the project uses the Google Gemini API to interpret the collected information.
 The AI analysis is organized into sections including:
-•	Important Findings
-•	Potential Threats
-•	Why It Matters
-•	Recommended Actions
+• Important Findings
+• Potential Threats
+• Why It Matters
+• Recommended Actions
 The purpose of the AI layer is not to replace the underlying security intelligence sources, but to provide a more understandable interpretation of the collected information.
-________________________________________
+
 
 **Database**
 The project uses SQLite with SQLAlchemy.
 Scan records contain information including:
-•	Scan ID
-•	Target
-•	Target type
-•	Scan results
-•	AI Analysis
+• Scan ID
+• Target
+• Target type
+• Scan results
+• AI Analysis
 The database file is:
 threat_intelligence.db
-________________________________________
+
 
 **PDF Reports**
 After a scan is completed, the dashboard can generate a PDF report containing the collected threat intelligence and analysis.
 The backend exposes a scan-specific endpoint for generating the report:
 /scan/{scan_id}
 The frontend stores the scan ID returned by the backend and uses it when the user selects Generate PDF Report.
-________________________________________
+
 **Target Validation**
 Before performing the scan, the application validates whether the supplied target matches the selected target type.
 Supported target types:
@@ -193,7 +193,6 @@ IP
 Invalid targets are rejected before unnecessary external API requests are performed.
 The application also handles targets that cannot be resolved.
 For an unresolvable target, the application does not continue with the AI analysis and reports that the analysis could not be performed.
-________________________________________
 
 **Environment Variables**
 API keys are stored in a .env file rather than being hard-coded into the application.
@@ -201,7 +200,7 @@ Example:
 VirusTotal_API_Key=your_virustotal_api_key
 ABUSEIPDB_API_KEY=your_abuseipdb_api_key
 GEMINI_API_KEY=your_gemini_api_key
-________________________________________
+
 
 **Installation**
 Clone the repository:
@@ -218,7 +217,7 @@ source venv/bin/activate
 Install the required dependencies:
 pip install -r requirements.txt
 Create the .env file and add the required API keys.
-________________________________________
+
 
 **Running the Application**
 Start the FastAPI backend from the project directory:
@@ -228,7 +227,7 @@ http://127.0.0.1:8000
 Then open the frontend:
 frontend/index.html
 in a browser.
-________________________________________
+
 
 **API**
 Scan Target
@@ -244,14 +243,14 @@ GET /scan/{scan_id}
 Example:
 http://127.0.0.1:8000/scan/1
 This generates the PDF report for the corresponding scan.
-________________________________________
+
 
 **Security Considerations**
 •	API keys are kept in environment variables.
 •	External API failures are handled by the application.
 •	Invalid targets are validated before scanning.
 •	Unresolvable targets are handled without attempting unnecessary AI analysis.
-________________________________________
+
 
 **Future Improvements**
 Possible improvements for a future version include:
@@ -265,7 +264,7 @@ Possible improvements for a future version include:
 •	Production deployment
 •	Improved dashboard visualizations
 •	Additional AI-assisted security capabilities
-________________________________________
+
 
 **Project Status**
 Threat Intelligence Dashboard V1 — Completed
@@ -279,7 +278,7 @@ Input
 → Dashboard
 → PDF Report
 The project is intended as a practical demonstration of integrating Python development, FastAPI, cybersecurity APIs, threat intelligence, databases, AI, and web development into one application.
-________________________________________
+
 
 
 
