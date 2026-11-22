@@ -111,7 +111,7 @@ scanButton.addEventListener("click", async function() {
             {
                 addIntelSection(
                     "VirusTotal",
-                    `VirusTotal Reputation: ${virustotal["Reputation"]}
+                    `VirusTotal Reputation: ${virustotal_ip["Reputation"]}
                     
                     
                     Analysis stats:
